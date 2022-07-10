@@ -6,7 +6,7 @@
 
 
 ## 🌍Save the Earth
-- 이런거 할 겁니다
+- 환경 보호에 관한 정보 공유 사이트
 - [기획 및 기술 선정 Notion 페이지](https://www.notion.so/ryu-ddo/Save-the-Earth-2dfbd93a4dc740eda4c338a6ede43c8b)
 - [Figma UI 디자인 페이지](#)
 
