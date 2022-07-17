@@ -12,7 +12,7 @@
 
 ## ⚖ 다음은 스터디 메이트가 지향하는 가치입니다
 <div align="center">
-<img src="https://user-images.githubusercontent.com/91606951/179381733-16ca7f6a-2e3b-46d8-ae5f-81191d5bd3ca.PNG" width="600px;" height="400px;">
+![My project](https://user-images.githubusercontent.com/101804857/179381992-23b741d7-574a-4335-9cdf-37c77861af21.png)
 </div>
 
 ## 👨‍👨‍👧‍👦 Member
