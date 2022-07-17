@@ -1,6 +1,6 @@
-## ESC 백엔드
-[프론트엔드](https://github.com/2-sc/Front-End) | 백엔드<br>
-2022년 창업대전 **Esc - BackEnd**입니다
+## ESC 프론트엔드
+프론트엔드 | [백엔드](https://github.com/2-sc/Back-End/blob/main/README.md)<br>
+2022년 창업대전 **Esc - Front-End**입니다  
 
 
 - 활동 기간 : 2022.06.06 (월) ~ 2022.10.28 (금)
