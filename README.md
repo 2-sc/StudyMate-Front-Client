@@ -19,6 +19,7 @@
 <div align="center">
 <h3>Front-end</h3>
 홍유진 <a href="https://github.com/timobyjin02">timobyjin02</a><br>
+이하람 <a href="https://github.com/halamlee">halamlee</a><br>
 
 
 <h3>Back-end</h3>
