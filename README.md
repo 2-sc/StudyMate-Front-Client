@@ -19,6 +19,7 @@
 <div align="center">
 <h3>Front-end</h3>
 홍유진 <a href="https://github.com/timobyjin02">timobyjin02</a><br>
+이하람 <a href="https://github.com/halamlee">halamlee</a><br>
 
 
 <h3>Back-end</h3>
@@ -56,10 +57,6 @@
 
 ## 🤙 Convention
 
-Add : 특정 기능을 하는 코드를 구현하였을 때<br>
-Modify : 이미 구현된 기능을 수정하는데 기능의 향상이 이루어졌을 때<br>
-Refactor : 리펙토링을 했을 때 기능 향상이 아니다 중복 코드 제거, 변수, 함수, 폴더명 등 코드 디자인 변경)<br>
-Merge : branch를 merge 하였을 때<br>
-Close : 일반적인 개발 이슈를 완료 했을 때<br>
+[gitmoji 사용](https://easy-commit-convention.halamlee.com/)
 
 ****
