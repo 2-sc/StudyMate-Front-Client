@@ -57,6 +57,6 @@
 
 ## 🤙 Convention
 
-[gitmoji 사용](https://easy-commit-convention.halamlee.com/)
+[easy-gitmoji 사용](https://easy-gitmoji.halamlee.com/)
 
 ****
