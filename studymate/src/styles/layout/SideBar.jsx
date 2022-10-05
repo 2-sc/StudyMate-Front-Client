@@ -20,24 +20,25 @@ function SideBar() {
       </Top>
       <Middle>
         <List>
-          <FontAwesomeIcon icon={faHouse} />
-          <Form>Home</Form>
+          <IconStyle icon={faHouse} />
+          Home
+          {/* <Form>Home</Form> */}
         </List>
         <List>
-          <FontAwesomeIcon icon={faStopwatch} />
-          <Form>Stopwatch</Form>
+          <IconStyle icon={faStopwatch} />
+          Stopwatch
         </List>
         <List>
-          <FontAwesomeIcon icon={faList} />
-          <Form>Todo list</Form>
+          <IconStyle icon={faList} />
+          Todo list
         </List>
         <List>
-          <FontAwesomeIcon icon={faShareNodes} />
-          <Form>Log</Form>
+          <IconStyle icon={faShareNodes} />
+          Log
         </List>
       </Middle>
       <Bottom>
-        <FontAwesomeIcon icon={faRightFromBracket} />
+        <IconStyle icon={faRightFromBracket} />
         <Category>Logo Out</Category>
       </Bottom>
     </Wrapper>
@@ -100,20 +101,18 @@ const List = styled.div`
   margin-bottom: 40px;
 `;
 
-const Form = styled.div`
-  margin-left: 18px;
-  font-size: 15px;
+const IconStyle = styled(FontAwesomeIcon)`
+  margin-right: 18px;
 `;
 
 const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 45px;
 `;
 
 const Category = styled.div`
-  /* font-weight: 500; */
   font-size: 13px;
-  margin-left: 5px;
+  margin-left: -10px;
 `;
