@@ -1,7 +1,21 @@
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import StopWatch from "./pages/stopwatch/StopWatch";
+import Planner from "./pages/planner/Planner";
+import Log from "./pages/log/Log";
+import Layout from "./styles/layout/Layout";
 
 function App() {
-  return <div className="App">upstream Deploy test</div>;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/stopwatch" element={<Layout component={<StopWatch />} />} />
+      <Route path="/planner" element={<Layout component={<Planner />} />} />
+      <Route path="/log" element={<Layout component={<Log />} />} />
+    </Routes>
+  );
 }
 
 export default App;
