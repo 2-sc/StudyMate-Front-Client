@@ -1,0 +1,23 @@
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  background-color: rgba(228, 187, 255, 0.6);
+  font-weight: bold;
+}
+
+.rdp {
+  --rdp-cell-size: 25px;
+  margin: 0;
+}
+
+.rdp-caption_label {
+  font-size: 15px;
+}
+
+.rdp-button_reset {
+  font-size: 12px;
+}
+
+.rdp-day_today:not(.rdp-day_outside) {
+  color: rgba(228, 187, 255, 0.6);
+}
