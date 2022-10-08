@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
+import Sign from '../../components/sign/Sign';
 
 function Login() {
-  return <div>Login</div>;
+  return <Sign place={'login'} />;
 }
 
 export default Login;
