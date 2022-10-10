@@ -18,7 +18,7 @@ function SideBar() {
       </Middle>
       <Bottom>
         <IconStyle icon={faRightFromBracket} />
-        <Category>Log Out</Category>
+        <LogOut>Log Out</LogOut>
       </Bottom>
     </Wrapper>
   );
@@ -81,9 +81,10 @@ const Bottom = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 34px;
+  color: #646464;
 `;
 
-const Category = styled.div`
+const LogOut = styled.div`
   font-size: 13px;
   margin-left: -10px;
 `;
