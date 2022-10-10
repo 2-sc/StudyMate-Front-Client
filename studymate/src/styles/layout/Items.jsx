@@ -1,12 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
-import styled from "@emotion/styled";
-import {
-  faHouse,
-  faStopwatch,
-  faList,
-  faShareNodes,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link, useLocation } from 'react-router-dom';
+import styled from '@emotion/styled';
+import { faHouse, faStopwatch, faList, faShareNodes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Items() {
   const pathName = useLocation().pathname;
@@ -14,36 +9,31 @@ function Items() {
   const items = [
     {
       icon: <IconStyle icon={faHouse} />,
-      name: "Home",
-      path: "/",
+      name: 'Home',
+      path: '/',
     },
     {
       icon: <IconStyle icon={faStopwatch} />,
-      name: "Stopwatch",
-      path: "/stopwatch",
+      name: 'Stopwatch',
+      path: '/stopwatch',
     },
     {
       icon: <IconStyle icon={faList} />,
-      name: "Planner",
-      path: "/planner",
+      name: 'Planner',
+      path: '/planner',
     },
     {
       icon: <IconStyle icon={faShareNodes} />,
-      name: "Log",
-      path: "/log",
+      name: 'Log',
+      path: '/log',
     },
   ];
 
   return (
     <>
       {items.map((item, idx) => (
-        <Link to={item.path} style={{ textDecoration: "none" }}>
-          <Item
-            key={idx}
-            icon={item.icon}
-            title={item.name}
-            isActive={pathName === item.path ? true : false}
-          />
+        <Link to={item.path} style={{ textDecoration: 'none' }} key={idx}>
+          <Item icon={item.icon} title={item.name} isActive={pathName === item.path ? true : false} />
         </Link>
       ))}
     </>
