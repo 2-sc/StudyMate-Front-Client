@@ -1,14 +1,15 @@
-import React from 'react';
-import styled from '@emotion/styled';
-import Wrapper from '../../components/common/Box';
-import SideBar from './SideBar';
+import React from "react";
+import styled from "@emotion/styled";
+import Box from "../../components/common/Box";
+import SideBar from "./SideBar";
 
-function Layout() {
+function Layout({ component }) {
   return (
     <Container>
-      <WrapperStyled size={[981, 496]}>
+      <Wrapper size={[981, 496]}>
         <SideBar />
-      </WrapperStyled>
+        {component}
+      </Wrapper>
     </Container>
   );
 }
@@ -24,6 +25,7 @@ const Container = styled.div`
   background-color: rgba(228, 187, 255, 0.6);
 `;
 
-const WrapperStyled = styled(Wrapper)`
+const Wrapper = styled(Box)`
   padding: 16px;
+  display: flex;
 `;
