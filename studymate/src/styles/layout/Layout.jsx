@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "@emotion/styled";
-import Wrapper from "../../components/common/Box";
-import SideBar from "./SideBar";
+import React from 'react';
+import styled from '@emotion/styled';
+import Wrapper from '../../components/common/Box';
+import SideBar from './SideBar';
 
 function Layout() {
   return (
