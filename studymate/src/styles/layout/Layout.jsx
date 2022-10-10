@@ -3,11 +3,12 @@ import styled from "@emotion/styled";
 import Wrapper from "../../components/common/Box";
 import SideBar from "./SideBar";
 
-function Layout() {
+function Layout({ component }) {
   return (
     <Container>
       <WrapperStyled size={[981, 496]}>
         <SideBar />
+        {component}
       </WrapperStyled>
     </Container>
   );
@@ -26,4 +27,5 @@ const Container = styled.div`
 
 const WrapperStyled = styled(Wrapper)`
   padding: 16px;
+  display: flex;
 `;

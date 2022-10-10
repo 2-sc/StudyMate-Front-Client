@@ -1,13 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHouse,
-  faStopwatch,
-  faList,
-  faShareNodes,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import Items from "./Items";
 
 function SideBar() {
   return (
@@ -19,27 +14,11 @@ function SideBar() {
         <EditBtn>프로필 편집</EditBtn>
       </Top>
       <Middle>
-        <List>
-          <IconStyle icon={faHouse} />
-          Home
-          {/* <Form>Home</Form> */}
-        </List>
-        <List>
-          <IconStyle icon={faStopwatch} />
-          Stopwatch
-        </List>
-        <List>
-          <IconStyle icon={faList} />
-          Todo list
-        </List>
-        <List>
-          <IconStyle icon={faShareNodes} />
-          Log
-        </List>
+        <Items />
       </Middle>
       <Bottom>
         <IconStyle icon={faRightFromBracket} />
-        <Category>Logo Out</Category>
+        <Category>Log Out</Category>
       </Bottom>
     </Wrapper>
   );
@@ -93,14 +72,6 @@ const Middle = styled.div`
   margin-top: 26px;
 `;
 
-const List = styled.div`
-  display: flex;
-  align-items: center;
-  text-align: left;
-  margin-left: 20px;
-  margin-bottom: 40px;
-`;
-
 const IconStyle = styled(FontAwesomeIcon)`
   margin-right: 18px;
 `;
@@ -109,7 +80,7 @@ const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 45px;
+  margin-top: 34px;
 `;
 
 const Category = styled.div`
