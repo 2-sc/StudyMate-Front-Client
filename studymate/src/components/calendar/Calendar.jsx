@@ -3,12 +3,7 @@ import styled from '@emotion/styled';
 
 import Box from '../common/Box';
 
-import {
-  DayPicker,
-  DateFormatter,
-  ClassNames,
-  useNavigation,
-} from 'react-day-picker';
+import { DayPicker, DateFormatter, ClassNames, useNavigation } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import './day-picker-customize.css';
 import ko from 'date-fns/locale/ko';
@@ -22,15 +17,11 @@ function CustomCaption(props) {
 
   return (
     <Header>
-      <Button
-        disabled={!previousMonth}
-        onClick={() => previousMonth && goToMonth(previousMonth)}>
+      <Button disabled={!previousMonth} onClick={() => previousMonth && goToMonth(previousMonth)}>
         <IconStyled icon={faAngleLeft} />
       </Button>
       <Text>{format(props.displayMonth, 'yyyy년 MM월', { locale: ko })}</Text>
-      <Button
-        disabled={!nextMonth}
-        onClick={() => nextMonth && goToMonth(nextMonth)}>
+      <Button disabled={!nextMonth} onClick={() => nextMonth && goToMonth(nextMonth)}>
         <IconStyled icon={faAngleRight} />
       </Button>
     </Header>

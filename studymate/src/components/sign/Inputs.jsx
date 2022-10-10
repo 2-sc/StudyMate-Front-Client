@@ -4,12 +4,7 @@ import styled from '@emotion/styled';
 function Login({ info, handleChangeInfo }) {
   return (
     <>
-      <Input
-        name="id"
-        placeholder="ID"
-        value={info.id}
-        onChange={handleChangeInfo}
-      />
+      <Input name="id" placeholder="ID" value={info.id} onChange={handleChangeInfo} />
       <Input
         name="password"
         type={'password'}
@@ -24,12 +19,7 @@ function Login({ info, handleChangeInfo }) {
 function Signup({ info, handleChangeInfo, warningState }) {
   return (
     <>
-      <Input
-        name="id"
-        placeholder="ID"
-        value={info.id}
-        onChange={handleChangeInfo}
-      />
+      <Input name="id" placeholder="ID" value={info.id} onChange={handleChangeInfo} />
       {warningState.id && <WarningMessage>id error</WarningMessage>}
       <Input
         name="password"
@@ -39,12 +29,7 @@ function Signup({ info, handleChangeInfo, warningState }) {
         onChange={handleChangeInfo}
       />
       {warningState.password && <WarningMessage>password error</WarningMessage>}
-      <Input
-        name="nickname"
-        placeholder="Nickname"
-        value={info.nickname}
-        onChange={handleChangeInfo}
-      />
+      <Input name="nickname" placeholder="Nickname" value={info.nickname} onChange={handleChangeInfo} />
       {warningState.nickname && <WarningMessage>nickname error</WarningMessage>}
     </>
   );
@@ -56,11 +41,7 @@ function Inputs({ place, info, handleChangeInfo, warningState }) {
       {place === 'login' ? (
         <Login info={info} handleChangeInfo={handleChangeInfo} />
       ) : (
-        <Signup
-          info={info}
-          handleChangeInfo={handleChangeInfo}
-          warningState={warningState}
-        />
+        <Signup info={info} handleChangeInfo={handleChangeInfo} warningState={warningState} />
       )}
     </Wrapper>
   );

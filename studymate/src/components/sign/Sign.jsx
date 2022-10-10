@@ -9,7 +9,7 @@ function Login() {
     password: '',
   });
 
-  const handleChangeInfo = (e) => {
+  const handleChangeInfo = e => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
@@ -38,7 +38,7 @@ function Signup() {
     nickname: false,
   });
 
-  const handleChangeInfo = (e) => {
+  const handleChangeInfo = e => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
 
@@ -46,11 +46,11 @@ function Signup() {
     console.log(info);
   };
 
-  const handleChangeBool = (str) => {
+  const handleChangeBool = str => {
     return str === 'true' ? false : true;
   };
 
-  const handleWarningState = (e) => {
+  const handleWarningState = e => {
     setWarningState({
       ...warningState,
       [e.target.name]: handleChangeBool(e.target.value),
@@ -63,26 +63,16 @@ function Signup() {
 
   return (
     <>
-      <Inputs
-        info={info}
-        handleChangeInfo={handleChangeInfo}
-        warningState={warningState}
-      />
+      <Inputs info={info} handleChangeInfo={handleChangeInfo} warningState={warningState} />
       <Button onClick={handleSubmit}>Create</Button>
       <Buttons>
         <Button name="id" value={warningState.id} onClick={handleWarningState}>
           ID
         </Button>
-        <Button
-          name="password"
-          value={warningState.password}
-          onClick={handleWarningState}>
+        <Button name="password" value={warningState.password} onClick={handleWarningState}>
           Password
         </Button>
-        <Button
-          name="nickname"
-          value={warningState.nickname}
-          onClick={handleWarningState}>
+        <Button name="nickname" value={warningState.nickname} onClick={handleWarningState}>
           Nickname
         </Button>
       </Buttons>
@@ -130,7 +120,7 @@ const Video = styled.video`
 const BoxStyled = styled(Box)`
   ${FLEX_CENTER_COLUMN};
   gap: 20px;
-  min-height: ${(props) => (props.place === 'login' ? '250px' : '300px')};
+  min-height: ${props => (props.place === 'login' ? '250px' : '300px')};
   height: fit-content;
   padding-bottom: 10px;
   box-sizing: border-box;
