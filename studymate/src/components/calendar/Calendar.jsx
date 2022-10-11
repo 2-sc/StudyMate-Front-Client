@@ -15,12 +15,37 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 function CustomCaption(props) {
   const { goToMonth, nextMonth, previousMonth } = useNavigation();
 
+  const seasonEmoji = {
+    spring: '🌸',
+    summer: '🌊',
+    autumn: '🍁',
+    winter: '⛄️',
+  };
+
+  const getSeason = month => {
+    const monthNumber = month.getMonth();
+    if (monthNumber >= 2 && monthNumber < 5) return 'spring';
+    if (monthNumber >= 5 && monthNumber < 8) return 'summer';
+    if (monthNumber >= 7 && monthNumber < 11) return 'autumn';
+    else return 'winter';
+  };
+
+  const season = getSeason(props.displayMonth);
+
   return (
     <Header>
       <Button disabled={!previousMonth} onClick={() => previousMonth && goToMonth(previousMonth)}>
         <IconStyled icon={faAngleLeft} />
       </Button>
-      <Text>{format(props.displayMonth, 'yyyy년 MM월', { locale: ko })}</Text>
+      <Text>
+        <span role="img" aria-label={season}>
+          {seasonEmoji[season]}
+        </span>
+        {format(props.displayMonth, 'yyyy년 MM월', { locale: ko })}
+        <span role="img" aria-label={season}>
+          {seasonEmoji[season]}
+        </span>
+      </Text>
       <Button disabled={!nextMonth} onClick={() => nextMonth && goToMonth(nextMonth)}>
         <IconStyled icon={faAngleRight} />
       </Button>
@@ -83,4 +108,8 @@ const IconStyled = styled(FontAwesomeIcon)``;
 const Text = styled.span`
   font-size: 14px;
   font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 `;
