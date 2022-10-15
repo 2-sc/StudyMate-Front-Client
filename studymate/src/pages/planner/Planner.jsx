@@ -1,23 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import Box from '../../components/common/Box';
 import Calendar from '../../components/calendar/Calendar';
-import Dazim from './components/Dazim';
-import Todolist from './components/Todolist';
+import Dazim from './dazim/Dazim';
 
 function Planner() {
+  const [resultData, setResultData] = useState();
+
   return (
     <Wrapper>
       <RightBox>
         <TopBox size={[438, 53]}>
           <Dazim />
         </TopBox>
-        <BottomBox size={[438, 400]}>
-          <Todolist />
-        </BottomBox>
+        <BottomBox size={[438, 400]}></BottomBox>
       </RightBox>
       <LeftBox>
-        <Calendar />
+        <Calendar resultData={resultData} setResultData={setResultData} />
         <SideBox size={[215, 220]}></SideBox>
       </LeftBox>
     </Wrapper>
