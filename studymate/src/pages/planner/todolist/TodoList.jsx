@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback } from 'react';
 import styled from '@emotion/styled';
-import Todo from './Todo';
+import TodoListItem from './TodoListItem';
 import TodoInsert from './TodoInsert';
 
 function Todolist() {
@@ -44,7 +44,7 @@ function Todolist() {
         <Title>Todolist</Title>
       </TopContainer>
       <TodoList>
-        <Todo onRemove={onRemove} todos={todos} />
+        <TodoListItem onRemove={onRemove} todos={todos} />
       </TodoList>
       <BottomContainer>
         <TodoInsert onInsert={onInsert} />

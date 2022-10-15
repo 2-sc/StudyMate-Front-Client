@@ -3,18 +3,18 @@ import styled from '@emotion/styled';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Todo({ todos, onRemove }) {
+function TodoListItem({ todos, onRemove }) {
   const [hide, setHide] = useState(true);
 
   return (
     <>
       {todos.map(todo => (
-        <TodoListItem key={todo.id} text={todo.text} checked={todo.checked} onRemove={onRemove} />
+        <Item key={todo.id} text={todo.text} checked={todo.checked} onRemove={onRemove} />
       ))}
     </>
   );
 
-  function TodoListItem({ id, text, checked, onRemove }) {
+  function Item({ id, text, checked, onRemove }) {
     return (
       <Wrapper
         onMouseOver={() => {
@@ -39,7 +39,7 @@ function Todo({ todos, onRemove }) {
   }
 }
 
-export default Todo;
+export default TodoListItem;
 
 const Wrapper = styled.div`
   width: 100%;
