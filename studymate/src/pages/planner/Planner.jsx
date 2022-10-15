@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import Box from '../../components/common/Box';
 import Calendar from '../../components/calendar/Calendar';
 import Dazim from './dazim/Dazim';
+import TodoList from './todolist/TodoList';
 
 function Planner() {
   const [resultData, setResultData] = useState();
@@ -13,7 +14,9 @@ function Planner() {
         <TopBox size={[438, 53]}>
           <Dazim />
         </TopBox>
-        <BottomBox size={[438, 400]}></BottomBox>
+        <BottomBox size={[438, 400]}>
+          <TodoList />
+        </BottomBox>
       </RightBox>
       <LeftBox>
         <Calendar resultData={resultData} setResultData={setResultData} />
@@ -44,12 +47,14 @@ const TopBox = styled(Box)`
 `;
 
 const BottomBox = styled(Box)`
+  position: relative;
   background: rgba(255, 255, 255, 0.8);
 `;
 
 const LeftBox = styled.div``;
 
 const SideBox = styled(Box)`
-  margin-top: 25px;
+  position: absolute;
+  bottom: 24px;
   background: rgba(255, 255, 255, 0.8);
 `;
