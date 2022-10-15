@@ -51,4 +51,5 @@ const InputText = styled.input`
   width: calc(100% - 20px);
   border: none;
   background: transparent;
+  outline: none;
 `;
