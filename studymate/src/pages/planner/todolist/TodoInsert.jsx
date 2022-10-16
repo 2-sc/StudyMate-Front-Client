@@ -1,14 +1,15 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function TodoInsert({ onInsert }) {
   const [inputValue, setInputValue] = useState(``);
+  const ref = useRef();
 
-  const onChangeHandler = useCallback(e => {
+  const onChangeHandler = e => {
     setInputValue(e.target.value);
-  }, []);
+  };
 
   const onClickHandler = useCallback(
     e => {
@@ -19,10 +20,14 @@ function TodoInsert({ onInsert }) {
     [onInsert, inputValue]
   );
 
+  useEffect(() => {
+    ref.current.focus();
+  }, []);
+
   return (
     <Wrapper>
       <TodoInput>
-        <Input onChange={onChangeHandler} value={inputValue} placeholder="Add new Todo" />
+        <Input onChange={onChangeHandler} value={inputValue} ref={ref} placeholder="Add new Todo" />
       </TodoInput>
       <PlusBtn onClick={onClickHandler}>
         <Icon icon={faPlus} />
