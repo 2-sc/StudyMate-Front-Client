@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "@emotion/styled";
-import Box from "../../components/common/Box";
-import SideBar from "./SideBar";
+import React from 'react';
+import styled from '@emotion/styled';
+import Box from '../../components/common/Box';
+import SideBar from './SideBar';
 
 function Layout({ component }) {
   return (
@@ -28,4 +28,5 @@ const Container = styled.div`
 const Wrapper = styled(Box)`
   padding: 16px;
   display: flex;
+  position: relative;
 `;
