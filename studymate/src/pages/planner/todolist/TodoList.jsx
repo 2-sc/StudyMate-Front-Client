@@ -64,7 +64,7 @@ const TodoList = styled.div`
   margin: 30px 23px 0 23px;
   overflow-y: auto;
   overflow-x: hidden;
-  c &::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 4px;
     height: 3px;
   }
