@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Items from './Items';
+import { Link } from 'react-router-dom';
 
 function SideBar() {
   return (
@@ -11,7 +12,9 @@ function SideBar() {
         <Profile></Profile>
         <Nickname>ujin</Nickname>
         <Text>화이팅</Text>
-        <EditBtn>프로필 편집</EditBtn>
+        <LinkStyled to="/editprofile">
+          <EditBtn>프로필 편집</EditBtn>
+        </LinkStyled>
       </Top>
       <Middle>
         <Items />
@@ -57,6 +60,11 @@ const Text = styled.span`
   font-size: 13px;
 `;
 
+const LinkStyled = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+`;
+
 const EditBtn = styled.button`
   width: 183px;
   height: 28px;
@@ -66,6 +74,7 @@ const EditBtn = styled.button`
   border-radius: 5px;
   border-style: none;
   font-size: 13px;
+  cursor: pointer;
 `;
 
 const Middle = styled.div`
