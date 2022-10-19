@@ -4,6 +4,7 @@ import Box from '../../components/common/Box';
 import Calendar from '../../components/calendar/Calendar';
 import Dazim from './dazim/Dazim';
 import TodoList from './todolist/TodoList';
+import Schedule from './schedule/Schedule';
 
 function Planner() {
   const [resultData, setResultData] = useState();
@@ -20,7 +21,9 @@ function Planner() {
       </RightBox>
       <LeftBox>
         <Calendar resultData={resultData} setResultData={setResultData} />
-        <SideBox size={[215, 220]}></SideBox>
+        <SideBox size={[215, 220]}>
+          <Schedule />
+        </SideBox>
       </LeftBox>
     </Wrapper>
   );
