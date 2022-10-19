@@ -3,8 +3,16 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Items from './Items';
+import { useNavigate } from 'react-router-dom';
 
 function SideBar() {
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    alert('로그아웃되었습니다.');
+    navigate('/', { replace: true });
+  };
+
   return (
     <Wrapper>
       <Top>
@@ -16,7 +24,7 @@ function SideBar() {
       <Middle>
         <Items />
       </Middle>
-      <Bottom>
+      <Bottom onClick={logoutHandler}>
         <IconStyle icon={faRightFromBracket} />
         <LogOut>Log Out</LogOut>
       </Bottom>
@@ -82,6 +90,7 @@ const Bottom = styled.div`
   justify-content: center;
   margin-top: 34px;
   color: #646464;
+  cursor: pointer;
 `;
 
 const LogOut = styled.div`
