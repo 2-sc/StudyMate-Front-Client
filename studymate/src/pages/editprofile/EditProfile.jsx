@@ -2,11 +2,12 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Box from '../../components/common/Box';
 import InfoContainer from './InfoContainer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function EditProfile() {
   const fileInput = useRef(null);
   const [image, setImage] = useState('https://i.ibb.co/gzCbMQL/logo.png');
+  const navigate = useNavigate();
   const [inputData, setInputData] = useState({
     img: '',
     nickname: '',
@@ -22,6 +23,19 @@ function EditProfile() {
   const handleChange = e => {
     setImage(URL.createObjectURL(e.target.files[0]));
     console.log(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const withdrawal = () => {
+    alert('정상적으로 탈퇴되었습니다.');
+    navigate('/', { replace: true });
+  };
+
+  const withdrawalButtonHandler = () => {
+    const result = window.confirm('정말 탈퇴하시겠습니까?');
+    if (result) {
+      const nickname = window.prompt('닉네임을 입력해주세요.');
+      nickname === 'nickname' ? withdrawal() : alert('잘못 입력했습니다. 다시 시도해주세요.');
+    }
   };
 
   const cancelButtonHandler = () => {
@@ -49,12 +63,21 @@ function EditProfile() {
           ></input>
         </ProfileContainer>
         <InfoContainer inputData={inputData} setInputData={setInputData} />
-        <Buttons>
-          <LinkStyle to="/stopwatch">
-            <Button onClick={cancelButtonHandler}>취소</Button>
-          </LinkStyle>
-          <Button onClick={submitButtonHandler}>완료</Button>
-        </Buttons>
+        <Footer>
+          <Button color={'#d7d3d3ed'} onClick={withdrawalButtonHandler}>
+            회원탈퇴
+          </Button>
+          <Buttons>
+            <LinkStyle to="/stopwatch">
+              <Button color={'black'} onClick={cancelButtonHandler}>
+                취소
+              </Button>
+            </LinkStyle>
+            <Button color={'#e4bbff'} onClick={submitButtonHandler}>
+              완료
+            </Button>
+          </Buttons>
+        </Footer>
       </Container>
     </Wrapper>
   );
@@ -102,20 +125,23 @@ const EditProfileBtn = styled.button`
   font-size: 15px;
 `;
 
-const Buttons = styled.div`
+const Footer = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 300px;
+  justify-content: center;
   position: absolute;
-  right: 24px;
-  bottom: 16px;
-  > button {
-    color: #e4bbff;
-  }
+  bottom: 12px;
 `;
+
+const Buttons = styled.div``;
 
 const Button = styled.button`
   border: none;
   background-color: transparent;
   font-size: 15px;
   cursor: pointer;
+  color: ${({ color }) => color};
 `;
 
 const LinkStyle = styled(Link)`
