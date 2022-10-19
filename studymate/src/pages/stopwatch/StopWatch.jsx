@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faStop, faStopwatch } from '@fortawesome/free-solid-svg-icons';
 import dayjs from 'dayjs';
+import Category from './category/ModalCategory';
 
 function StopWatch() {
   const [isPlay, setIsPlay] = useState(false);
@@ -58,7 +59,9 @@ function StopWatch() {
           )}
         </Buttons>
       </Circle>
-      <Category>Category</Category>
+      <CategoryContainer>
+        <Category />
+      </CategoryContainer>
     </Wrapper>
   );
 }
@@ -66,8 +69,7 @@ function StopWatch() {
 export default StopWatch;
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  margin-left: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,6 +85,7 @@ const Circle = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  border: 3px solid #d3d3d3;
   background-color: #f1f1f1;
   margin-bottom: 30px;
 `;
@@ -104,12 +107,4 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Category = styled.button`
-  border: none;
-  background: transparent;
-  outline: none;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 500;
-  color: #646464;
-`;
+const CategoryContainer = styled.div``;
