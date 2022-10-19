@@ -62,11 +62,7 @@ const Wrapper = styled.div`
   padding: 7px;
 `;
 
-const CheckBoxContainer = styled.div`
-  /* .icon {
-    font-size: 17px;
-  } */
-`;
+const CheckBoxContainer = styled.div``;
 
 const ClickBoxStyle = styled(ClickBox)`
   width: 21px;
