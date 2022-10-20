@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import Box from '../../components/common/Box';
 import Inputs from './Inputs';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [info, setInfo] = useState({
@@ -20,7 +21,12 @@ function Login() {
   return (
     <>
       <Inputs place={'login'} info={info} handleChangeInfo={handleChangeInfo} />
-      <Button onClick={handleSubmit}>Submit</Button>
+      <ButtonWrapper>
+        <LinkStyle to={'/signup'}>
+          <span>signup</span>
+        </LinkStyle>
+        <Button onClick={handleSubmit}>Submit</Button>
+      </ButtonWrapper>
     </>
   );
 }
@@ -64,8 +70,13 @@ function Signup() {
   return (
     <>
       <Inputs info={info} handleChangeInfo={handleChangeInfo} warningState={warningState} />
-      <Button onClick={handleSubmit}>Create</Button>
-      <Buttons>
+      <ButtonWrapper>
+        <LinkStyle to={'/login'}>
+          <span>login</span>
+        </LinkStyle>
+        <Button onClick={handleSubmit}>Create</Button>
+      </ButtonWrapper>
+      {/* <Buttons>
         <Button name="id" value={warningState.id} onClick={handleWarningState}>
           ID
         </Button>
@@ -75,7 +86,7 @@ function Signup() {
         <Button name="nickname" value={warningState.nickname} onClick={handleWarningState}>
           Nickname
         </Button>
-      </Buttons>
+      </Buttons> */}
     </>
   );
 }
@@ -131,6 +142,21 @@ const Title = styled.h1`
   font-weight: 500;
   color: #757575;
   margin: 0;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 140px;
+  height: fit-content;
+`;
+
+const LinkStyle = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 `;
 
 const Buttons = styled.div`
