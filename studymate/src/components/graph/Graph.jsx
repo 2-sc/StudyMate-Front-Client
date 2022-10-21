@@ -17,7 +17,7 @@ function Graph({ data }) {
   };
 
   return (
-    <Wrapper size={[475, 439]} opacity={0.8}>
+    <Wrapper size={[438, 400]} opacity={0.8}>
       <Title>Graph</Title>
       <Buttons>
         <Button name="timeline" graphState={graphState} getColor={getColor} onClick={handleGraphState}>

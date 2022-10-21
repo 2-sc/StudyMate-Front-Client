@@ -24,9 +24,9 @@ function PieGraph({ data }) {
     <Wrapper>
       <ResponsivePie
         data={data}
-        width={400}
-        height={400}
-        margin={{ top: 0, right: 80, bottom: 0, left: 100 }}
+        width={380}
+        height={380}
+        margin={{ top: 0, right: 80, bottom: 0, left: 110 }}
         innerRadius={0.5}
         padAngle={2}
         cornerRadius={3}
@@ -64,6 +64,6 @@ const Wrapper = styled.div`
 `;
 
 const Total = styled.h1`
-  font-size: 26px;
+  font-size: 20px;
   margin: -45px 0 0;
 `;
