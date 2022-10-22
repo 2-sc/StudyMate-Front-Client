@@ -8,7 +8,7 @@ import { DayPicker, DateFormatter, ClassNames, useNavigation } from 'react-day-p
 import 'react-day-picker/dist/style.css';
 import './day-picker-customize.css';
 import ko from 'date-fns/locale/ko';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
