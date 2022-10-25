@@ -5,7 +5,7 @@ import PieGraph from './PieGraph';
 import TimeLineGraph from './TimeLineGraph';
 
 function Graph({ data }) {
-  const [graphState, setGraphState] = useState('timeline');
+  const [graphState, setGraphState] = useState('total');
 
   const getColor = name => {
     return name.name === graphState ? '#e7e7e7' : 'inherit';
@@ -20,7 +20,12 @@ function Graph({ data }) {
     <Wrapper size={[438, 400]} opacity={0.8}>
       <Title>Graph</Title>
       <Buttons>
-        <Button name="timeline" graphState={graphState} getColor={getColor} onClick={handleGraphState}>
+        <Button
+          name="timeline"
+          graphState={graphState}
+          getColor={getColor}
+          onClick={() => alert('베타버전에서는 지원하지 않습니다.')}
+        >
           Time Line
         </Button>
         <Button name="total" graphState={graphState} getColor={getColor} onClick={handleGraphState}>
