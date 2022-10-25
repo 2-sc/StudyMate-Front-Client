@@ -66,4 +66,5 @@ const Wrapper = styled.div`
 const Total = styled.h1`
   font-size: 20px;
   margin: -45px 0 0;
+  color: rgba(228, 187, 255, 0.6);
 `;
