@@ -5,7 +5,6 @@ import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import Items from './Items';
 import { Link, useNavigate } from 'react-router-dom';
 
-
 function SideBar() {
   const navigate = useNavigate();
 
@@ -20,9 +19,7 @@ function SideBar() {
         <Profile></Profile>
         <Nickname>ujin</Nickname>
         <Text>화이팅</Text>
-        <LinkStyled to="/editprofile">
-          <EditBtn>프로필 편집</EditBtn>
-        </LinkStyled>
+        <EditBtn onClick={() => alert('베타버전에서는 지원하지 않습니다.')}>프로필 편집</EditBtn>
       </Top>
       <Middle>
         <Items />
