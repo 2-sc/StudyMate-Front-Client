@@ -4,26 +4,13 @@ import SchedulePlus from './SchedulePlus';
 import ScheduleListItem from './ScheduleListItem';
 
 function Schedule() {
-  const [schedules, setSchedules] = useState([]);
-
-  const onInsert = () => {
-    const schedule = {
-      id: schedules.length + 1,
-    };
-    setSchedules(schedules.concat(schedule));
-  };
-
-  const onRemove = id => {
-    setSchedules(schedules.filter(schedule => schedule.id !== id));
-  };
-
   return (
     <Wrapper>
       <Top>
-        <SchedulePlus onInsert={onInsert} />
+        <SchedulePlus />
       </Top>
       <List>
-        <ScheduleListItem schedules={schedules} onRemove={onRemove} />
+        <ScheduleListItem />
       </List>
     </Wrapper>
   );

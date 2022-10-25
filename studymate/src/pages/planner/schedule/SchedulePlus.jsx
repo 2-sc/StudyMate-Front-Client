@@ -4,15 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function Schedule({ onInsert }) {
-  const clickHandler = () => {
-    onInsert();
-  };
   return (
     <Wrapper>
       <Title>Schedule</Title>
-      <PlusBtn onClick={clickHandler}>
-        <FontAwesomeIcon icon={faPlus} />
-      </PlusBtn>
     </Wrapper>
   );
 }
