@@ -55,25 +55,25 @@ function CustomCaption(props) {
 }
 
 function Calendar({ resultData, setResultData }) {
-  const [selected, setSelected] = useState();
+  // const [selected, setSelected] = useState();
 
-  useEffect(() => {
-    if (!selected) {
-      setResultData(undefined);
-    }
-    if (selected?.from) {
-      setResultData(resultData => ({ ...resultData, from: moment(selected.from).format().slice(0, 10) }));
-      if (selected.to) {
-        setResultData(resultData => ({ ...resultData, to: moment(selected.to).format().slice(0, 10) }));
-      }
-    }
-  }, [selected]);
+  // useEffect(() => {
+  //   if (!selected) {
+  //     setResultData(undefined);
+  //   }
+  //   if (selected?.from) {
+  //     setResultData(resultData => ({ ...resultData, from: moment(selected.from).format().slice(0, 10) }));
+  //     if (selected.to) {
+  //       setResultData(resultData => ({ ...resultData, to: moment(selected.to).format().slice(0, 10) }));
+  //     }
+  //   }
+  // }, [selected]);
   return (
     <Wrapper size={[214, 214]} opacity={0.8}>
       <DayPicker
         mode="range"
-        selected={selected}
-        onSelect={setSelected}
+        // selected={selected}
+        // onSelect={setSelected}
         locale={ko}
         components={{
           Caption: CustomCaption,
