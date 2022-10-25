@@ -21,7 +21,7 @@ function Planner() {
       </RightBox>
       <LeftBox>
         <Calendar resultData={resultData} setResultData={setResultData} />
-        <SideBox size={[215, 220]}>
+        <SideBox size={[214, 220]}>
           <Schedule />
         </SideBox>
       </LeftBox>
@@ -32,7 +32,7 @@ function Planner() {
 export default Planner;
 
 const Wrapper = styled.div`
-  width: calc(100% - 215px);
+  width: calc(100% - 223px);
   display: flex;
   justify-content: space-around;
   margin-top: 10px;

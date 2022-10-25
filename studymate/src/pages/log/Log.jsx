@@ -28,19 +28,18 @@ const Wrapper = styled.div`
   width: calc(100% - 223px);
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 `;
 
 const LeftBox = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 25px;
-  margin-left: 15px;
+  margin-left: 10px;
 `;
 
 const RightBox = styled.div`
-  margin-top: 11px;
   height: 100%;
   & > div:nth-child(2) {
     position: absolute;
