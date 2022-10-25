@@ -5,39 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ScheduleListItem({ schedules, onRemove }) {
   return (
-    <>
-      {schedules.map(schedule => (
-        <Item key={schedule.id} id={schedule.id} onRemove={onRemove} />
-      ))}
-    </>
+    <Wrapper>
+      <InputText value={'창업대전 (09:00 ~ 18:00)'} />
+    </Wrapper>
   );
-
-  function Item({ id, onRemove }) {
-    const [hide, setHide] = useState(true);
-    const [inputValue, setInputValue] = useState(``);
-
-    // useEffect(() => {
-    //   console.log({ inputValue });
-    // }, [inputValue]);
-
-    return (
-      <Wrapper
-        onMouseOver={() => {
-          setHide(false);
-        }}
-        onMouseOut={() => {
-          setHide(true);
-        }}
-      >
-        <InputText onChange={e => setInputValue(e.target.value)} value={inputValue} />
-        {hide || (
-          <DeleteBtn onClick={() => onRemove(id)} hideState={hide}>
-            <FontAwesomeIcon icon={faTrashCan} />
-          </DeleteBtn>
-        )}
-      </Wrapper>
-    );
-  }
 }
 
 export default ScheduleListItem;

@@ -7,29 +7,12 @@ function TodoInsert({ onInsert }) {
   const [inputValue, setInputValue] = useState(``);
   const ref = useRef();
 
-  const onChangeHandler = e => {
-    setInputValue(e.target.value);
-  };
-
-  const onClickHandler = useCallback(
-    e => {
-      onInsert(inputValue);
-      setInputValue(``);
-      e.preventDefault();
-    },
-    [onInsert, inputValue]
-  );
-
-  useEffect(() => {
-    ref.current.focus();
-  }, []);
-
   return (
     <Wrapper>
       <TodoInput>
-        <Input onChange={onChangeHandler} value={inputValue} ref={ref} placeholder="Add new Todo" />
+        <Input value={''} ref={ref} placeholder="Add new Todo" />
       </TodoInput>
-      <PlusBtn onClick={onClickHandler}>
+      <PlusBtn>
         <Icon icon={faPlus} />
       </PlusBtn>
     </Wrapper>

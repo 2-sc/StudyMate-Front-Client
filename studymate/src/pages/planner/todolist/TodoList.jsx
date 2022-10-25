@@ -60,8 +60,8 @@ const TopContainer = styled.div`
 const Title = styled.div``;
 
 const TodoList = styled.div`
-  height: 248px;
-  margin: 30px 23px 0 23px;
+  height: fit-content;
+  margin: 15px 23px 0 23px;
   overflow-y: auto;
   overflow-x: hidden;
   &::-webkit-scrollbar {
