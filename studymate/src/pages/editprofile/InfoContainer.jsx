@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from '../../components/calendar/Modal';
+import { formatISO, parseISO, differenceInDays } from 'date-fns';
+
 import styled from '@emotion/styled';
 
 function InfoContainer({ inputData, setInputData }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [day, setDay] = useState('');
+  const [dDay, setDDay] = useState();
+
   const onChange = e => {
     setInputData({ ...inputData, [e.target.id]: e.target.value });
   };
@@ -9,6 +16,30 @@ function InfoContainer({ inputData, setInputData }) {
   const onClick = e => {
     console.log('e.target.id :>> ', e.target.id);
   };
+
+  const onClickDatePickerButton = () => {
+    setIsModalOpen(true);
+  };
+
+  useEffect(() => {
+    if (day) {
+      const today = formatISO(new Date(), { representation: 'date' });
+      const dDay = differenceInDays(parseISO(today), parseISO(day.from));
+
+      const getDDay = dDay => {
+        switch (dDay.toString()[0]) {
+          case '-':
+            return `- ${dDay.toString().substr(1)}`;
+          case '0':
+            return '- 0';
+          default:
+            return `+ ${dDay}`;
+        }
+      };
+
+      setDDay(getDDay(dDay));
+    }
+  });
 
   return (
     <Wrapper>
@@ -27,9 +58,10 @@ function InfoContainer({ inputData, setInputData }) {
       <InfoWrapper>
         <Label htmlFor="d-dayName">D - day</Label>
         <DdayInput onChange={onChange} type={'text'} id={'d-dayName'} placeholder={'D - day 이름'} />
-        <span>까지 D - 000</span>
-        <DateButton>날짜 선택</DateButton>
+        <span>까지 D {dDay ? dDay : '- 000'}</span>
+        <DateButton onClick={onClickDatePickerButton}>날짜 선택</DateButton>
       </InfoWrapper>
+      {isModalOpen && <Modal day={day} setDay={setDay} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />}
     </Wrapper>
   );
 }
