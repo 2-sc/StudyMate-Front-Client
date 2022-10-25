@@ -76,7 +76,7 @@ const ListBox = styled.div`
   flex: 1;
   margin-right: 15px;
   color: #ccc;
-  font-size: 14px;
+  font-size: 12px;
 
   &:after {
     content: '';
